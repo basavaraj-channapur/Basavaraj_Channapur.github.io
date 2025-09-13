@@ -972,6 +972,40 @@ section {
     justify-content: center;
     overflow: hidden;
     box-shadow: var(--shadow-2xl);
+    transition: var(--transition);
+}
+
+.about-image:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-2xl), 0 0 30px rgba(26, 35, 126, 0.3);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: var(--transition);
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(26, 35, 126, 0.1) 0%, rgba(0, 105, 92, 0.1) 100%);
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 1;
+}
+
+.about-image:hover .image-overlay {
+    opacity: 1;
 }
 
 .image-placeholder i {
@@ -988,6 +1022,13 @@ section {
     border-radius: var(--radius-xl);
     box-shadow: var(--shadow-xl);
     text-align: center;
+    z-index: 2;
+    transition: var(--transition);
+}
+
+.about-image:hover .experience-card {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-2xl);
 }
 
 .exp-number {
